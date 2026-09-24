@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan Khusus Untukmu</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #333;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <p id="pesan">Klik tombol di bawah untuk mulai membaca pesan!</p>
+    <button onclick="pesanBerikutnya()">Selanjutnya ➔</button>
+  </div>
+
+  <script>
+    // Ganti atau tambah isi pesan kamu di dalam tanda kurung siku di bawah ini
+    const daftarPesan = [
+      "Halo! Makasih ya udah buka link ini 😊",
+      "Aku cuma mau nyampein beberapa hal kecil...",
+      "Semoga harimu menyenangkan dan selalu bahagia! ✨",
+      "Jangan lupa makan dan minum air putih ya 💧",
+      "Pesan sudah habis! Makasih udah baca sampai akhir 👋"
+    ];
+
+    let indeks = 0;
+
+    function pesanBerikutnya() {
+      if (indeks < daftarPesan.length) {
+        document.getElementById("pesan").innerText = daftarPesan[indeks];
+        indeks++;
+      } else {
+        // Mengulang pesan dari awal lagi kalau diklik lagi
+        indeks = 0;
+        document.getElementById("pesan").innerText = daftarPesan[indeks];
+        indeks++;
+      }
+    }
+  </script>
+
+</body>
+</html>
